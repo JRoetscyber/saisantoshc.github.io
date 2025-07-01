@@ -30,91 +30,74 @@ body {
   color: var(--text);
   min-height: 100vh;
 }
-/* Navbar */
-nav {
+/* Navbar styles */
+.navbar {
+  width: 100%;
   position: sticky;
   top: 0;
   z-index: 100;
   background: var(--bg);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+}
+.nav-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 3vw;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-  transition: background var(--transition);
+  justify-content: flex-start;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.2rem 2vw;
+  gap: 2rem;
 }
-
-/* Hamburger menu styles */
-.nav-toggle {
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  width: 2.2rem;
-  height: 2.2rem;
-  cursor: pointer;
-  margin-left: 1rem;
-  z-index: 110;
-  background: none;
-  border: none;
-}
-.nav-toggle span {
-  display: block;
-  height: 3px;
-  width: 28px;
-  background: var(--accent);
-  margin: 5px 0;
-  border-radius: 2px;
-  transition: all 0.3s;
-}
-
-/* Responsive nav links */
-@media (max-width: 900px) {
-  nav {
-    flex-direction: row;
-    gap: 0.7rem;
-    padding: 1rem 2vw;
-  }
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background: var(--bg);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
-    flex-direction: column;
-    align-items: flex-end;
-    gap: 0;
-    width: 220px;
-    padding: 1.2rem 1.5rem;
-    display: none;
-    transition: all 0.3s;
-  }
-  .nav-links.open {
-    display: flex;
-  }
-  .nav-links a {
-    padding: 0.7rem 0;
-    width: 100%;
-    font-size: 1.08rem;
-    border-bottom: 1px solid #eee;
-  }
-  .nav-links a:last-child {
-    border-bottom: none;
-  }
-  .nav-toggle {
-    display: flex;
-  }
-}
-
 .nav-logo {
   font-weight: 700;
   font-size: 1.5rem;
   letter-spacing: 1px;
   color: var(--accent);
   text-decoration: none;
+  margin-right: 2rem;
+  flex-shrink: 0;
+}
+.nav-toggle {
+  display: none;
+}
+.nav-toggle-label {
+  display: none;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 110;
+}
+.nav-toggle-label span,
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  display: block;
+  background: var(--accent);
+  height: 3px;
+  width: 28px;
+  border-radius: 2px;
+  position: relative;
+  transition: all 0.3s;
+}
+.nav-toggle-label span::before,
+.nav-toggle-label span::after {
+  content: '';
+  position: absolute;
+  left: 0;
+}
+.nav-toggle-label span::before {
+  top: -9px;
+}
+.nav-toggle-label span::after {
+  top: 9px;
 }
 .nav-links {
   display: flex;
   gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.nav-links li {
+  display: flex;
 }
 .nav-links a {
   color: var(--text);
@@ -123,6 +106,7 @@ nav {
   font-size: 1rem;
   position: relative;
   transition: color var(--transition);
+  padding: 0.3rem 0.2rem;
 }
 .nav-links a::after {
   content: '';
@@ -139,6 +123,69 @@ nav {
 .nav-links a.active::after {
   width: 100%;
 }
+
+/* Responsive nav */
+@media (max-width: 900px) {
+  .nav-content {
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    padding: 1rem 2vw;
+  }
+  .nav-toggle {
+    display: block;
+    position: absolute;
+    left: -9999px;
+  }
+  .nav-toggle-label {
+    display: block;
+    position: relative;
+    width: 2.2rem;
+    height: 2.2rem;
+    margin-left: auto;
+  }
+  .nav-toggle-label span {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  .nav-links {
+    flex-direction: column;
+    align-items: flex-start;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var(--bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.07);
+    width: 220px;
+    padding: 1.2rem 1.5rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    transition: max-height 0.35s cubic-bezier(.4,0,.2,1), opacity 0.25s;
+    z-index: 99;
+  }
+  .nav-links.open {
+    max-height: 500px;
+    opacity: 1;
+    pointer-events: auto;
+    transition: max-height 0.45s cubic-bezier(.4,0,.2,1), opacity 0.25s;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    width: 100%;
+    padding: 0.7rem 0;
+    font-size: 1.08rem;
+    border-bottom: 1px solid #eee;
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+}
+
 /* Hero */
 .hero {
   min-height: 100vh;
