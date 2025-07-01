@@ -42,11 +42,12 @@ body {
 .nav-content {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between; /* changed from flex-start */
   max-width: 1200px;
   margin: 0 auto;
   padding: 1.2rem 2vw;
   gap: 2rem;
+  position: relative; /* for absolute positioning of hamburger */
 }
 .nav-logo {
   font-weight: 700;
@@ -58,13 +59,15 @@ body {
   flex-shrink: 0;
 }
 .nav-toggle {
-  display: none;
+  position: absolute;
+  left: -9999px; /* visually hidden but accessible */
 }
 .nav-toggle-label {
   display: none;
   cursor: pointer;
-  margin-left: auto;
   z-index: 110;
+  background: none;
+  border: none;
 }
 .nav-toggle-label span,
 .nav-toggle-label span::before,
@@ -130,24 +133,18 @@ body {
     flex-wrap: wrap;
     gap: 0.7rem;
     padding: 1rem 2vw;
-  }
-  .nav-toggle {
-    display: block;
-    position: absolute;
-    left: -9999px;
+    position: relative;
   }
   .nav-toggle-label {
     display: block;
-    position: relative;
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
     width: 2.2rem;
     height: 2.2rem;
-    margin-left: auto;
-  }
-  .nav-toggle-label span {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
+    margin-left: 0;
+    z-index: 110;
   }
   .nav-links {
     flex-direction: column;
@@ -595,6 +592,9 @@ footer {
   .about-block, .project-card {
     min-width: 0;
     max-width: 100%;
+    padding: 1.5rem 1rem;
+  }
+}
     padding: 1.5rem 1rem;
   }
 }
