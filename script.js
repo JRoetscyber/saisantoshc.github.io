@@ -321,3 +321,38 @@ function animateToolEntries() {
   reveal();
 }
 animateToolEntries();
+
+// Theme toggle logic (for data-theme on <html>)
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.getElementById('theme-toggle');
+  if (themeToggle) {
+    themeToggle.onclick = function() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      html.setAttribute('data-theme', current === 'dark' ? 'light' : 'dark');
+    };
+  }
+});
+
+// Experience Section: Add glow effect that follows mouse cursor
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.timeline-entry').forEach(entry => {
+    // Add the glow div if not present
+    if (!entry.querySelector('.glow')) {
+      const glow = document.createElement('div');
+      glow.className = 'glow';
+      entry.appendChild(glow);
+    }
+    entry.addEventListener('mousemove', function(e) {
+      const rect = entry.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      entry.querySelector('.glow').style.setProperty('--glow-x', `${x}%`);
+      entry.querySelector('.glow').style.setProperty('--glow-y', `${y}%`);
+    });
+    entry.addEventListener('mouseleave', function() {
+      entry.querySelector('.glow').style.setProperty('--glow-x', `50%`);
+      entry.querySelector('.glow').style.setProperty('--glow-y', `50%`);
+    });
+  });
+});
