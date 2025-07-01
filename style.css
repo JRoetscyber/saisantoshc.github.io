@@ -134,6 +134,10 @@ body {
     gap: 0.7rem;
     padding: 1rem 2vw;
     position: relative;
+    justify-content: flex-end; /* align content to right */
+  }
+  .nav-logo {
+    margin-right: auto; /* push logo to left */
   }
   .nav-toggle-label {
     display: block;
@@ -148,10 +152,11 @@ body {
   }
   .nav-links {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end; /* align nav links to right */
     position: absolute;
     top: 100%;
-    left: 0;
+    right: 0; /* align dropdown to right */
+    left: auto;
     background: var(--bg);
     box-shadow: 0 8px 24px rgba(0,0,0,0.07);
     width: 220px;
@@ -171,12 +176,15 @@ body {
   }
   .nav-links li {
     width: 100%;
+    display: flex;
+    justify-content: flex-end; /* align each link to right */
   }
   .nav-links a {
     width: 100%;
     padding: 0.7rem 0;
     font-size: 1.08rem;
     border-bottom: 1px solid #eee;
+    text-align: right; /* text right */
   }
   .nav-links a:last-child {
     border-bottom: none;
@@ -594,7 +602,7 @@ footer {
     max-width: 100%;
     padding: 1.5rem 1rem;
   }
-}
+  .work-card, .tools-list, .certifications-list {
     padding: 1.5rem 1rem;
   }
 }
