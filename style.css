@@ -170,7 +170,7 @@ body {
     right: 0; /* align dropdown to right */
     left: auto;
     background: var(--bg);
-    box-shadow: 0 8px 32px rgba(0,0,0,0.10);
+    box-shadow: 0 8px 32px rgba(24, 18, 18, 0.945);
     width: 220px;
     padding: 1.2rem 1.5rem;
     max-height: 0;
@@ -181,10 +181,12 @@ body {
     z-index: 99;
   }
   .nav-links.open {
+    background-color: #d1fae5; /* electric blue */
     max-height: 500px;
     opacity: 1;
     pointer-events: auto;
     transition: max-height 0.45s cubic-bezier(.4,0,.2,1), opacity 0.25s;
+    border-radius:1.2rem; /* rounded corners */
   }
   .nav-links li {
     width: 100%;
