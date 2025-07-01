@@ -121,3 +121,203 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// ---- Experience Section Data & Rendering ----
+const experienceData = [
+  {
+    job: "Data Analyst",
+    company: "Insurigo",
+    date: "Sept 2024 - June 2025",
+    desc: "Tableau dashboards, SQL analytics, Excel automation for insurance metrics and reporting.",
+    tech: ["Tableau", "SQL", "Excel", "Automation"]
+  },
+  {
+    job: "Senior Software Engineer",
+    company: "Insurigo",
+    date: "July 2021 - Aug 2023",
+    desc: "REST APIs (Python/Django), MySQL/PostgreSQL, CI/CD, React, MongoDB, Azure DevOps.",
+    tech: ["Python", "Django", "React", "Azure", "CI/CD"]
+  },
+  {
+    job: "Full Stack Developer",
+    company: "Apollo Telehealth",
+    date: "Jan 2021 – Jun 2021",
+    desc: "React, TypeScript, Node.js, Express, Angular, MongoDB, large-scale data migration.",
+    tech: ["React", "TypeScript", "Node.js", "Express", "Angular", "MongoDB"]
+  },
+  {
+    job: "Machine Learning Engineer",
+    company: "Egen AI",
+    date: "Jan 2020 - Jan 2021",
+    desc: "Machine learning solutions (details on request).",
+    tech: ["Machine Learning", "Python", "AI"]
+  }
+];
+
+function renderExperienceSection() {
+  const container = document.getElementById('experience-timeline');
+  if (!container) return;
+  // Sort by most recent (assuming date order in array)
+  container.innerHTML = experienceData.map(exp => `
+    <div class="timeline-entry">
+      <span class="timeline-dot"></span>
+      <div class="timeline-content">
+        <div class="timeline-header">
+          <span>
+            <span class="timeline-job">${exp.job}</span>
+            <span class="timeline-company">@ ${exp.company}</span>
+          </span>
+          <span class="timeline-date">${exp.date}</span>
+        </div>
+        <div class="timeline-desc">${exp.desc}</div>
+        <div class="timeline-tags">
+          ${exp.tech.map(tag => `<span class="timeline-tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+renderExperienceSection();
+
+// ---- Experience Section Animation ----
+function animateTimelineEntries() {
+  const entries = document.querySelectorAll('.timeline-entry');
+  function reveal() {
+    const trigger = window.innerHeight * 0.92;
+    entries.forEach((el, i) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) {
+        setTimeout(() => el.classList.add('visible'), i * 120);
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('load', reveal);
+  reveal();
+}
+animateTimelineEntries();
+
+// ---- Certifications Section Data & Rendering ----
+const certificationsData = [
+  {
+    title: "Microsoft Azure Fundamentals",
+    org: "Microsoft",
+    date: "2023",
+    desc: "Fundamental knowledge of cloud concepts, Azure services, workloads, security, and privacy.",
+    tags: ["Azure", "Cloud", "Fundamentals"]
+  },
+  {
+    title: "Graduate Certification – UTD Applied Machine Learning",
+    org: "University of Texas at Dallas",
+    date: "2022",
+    desc: "Graduate-level coursework in applied machine learning and data science.",
+    tags: ["Machine Learning", "Data Science", "Python"]
+  }
+];
+
+function renderCertificationsSection() {
+  const container = document.getElementById('certifications-timeline');
+  if (!container) return;
+  container.innerHTML = certificationsData.map(cert => `
+    <div class="certification-entry">
+      <span class="certification-dot"></span>
+      <div class="certification-content">
+        <div class="timeline-header">
+          <span>
+            <span class="certification-title">${cert.title}</span>
+            <span class="certification-org">@ ${cert.org}</span>
+          </span>
+          <span class="certification-date">${cert.date}</span>
+        </div>
+        <div class="certification-desc">${cert.desc}</div>
+        <div class="certification-tags">
+          ${cert.tags.map(tag => `<span class="certification-tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+renderCertificationsSection();
+
+// ---- Certifications Section Animation ----
+function animateCertificationEntries() {
+  const entries = document.querySelectorAll('.certification-entry');
+  function reveal() {
+    const trigger = window.innerHeight * 0.92;
+    entries.forEach((el, i) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) {
+        setTimeout(() => el.classList.add('visible'), i * 120);
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('load', reveal);
+  reveal();
+}
+animateCertificationEntries();
+
+// ---- Tools Section Data & Rendering ----
+const toolsData = [
+  {
+    title: "Frontend",
+    desc: "Modern UI frameworks and libraries for building interactive web apps.",
+    tags: ["React", "Angular", "TypeScript", "HTML", "CSS"]
+  },
+  {
+    title: "Backend",
+    desc: "Robust server-side development and API design.",
+    tags: ["Node.js", "Express", "Django", "Flask", "Python"]
+  },
+  {
+    title: "Databases",
+    desc: "Relational and NoSQL database management.",
+    tags: ["PostgreSQL", "MySQL", "MongoDB"]
+  },
+  {
+    title: "Cloud & DevOps",
+    desc: "Cloud platforms, CI/CD, and automation tools.",
+    tags: ["Azure", "Azure DevOps", "Git", "CI/CD"]
+  },
+  {
+    title: "Data & AI",
+    desc: "Data analytics, visualization, and machine learning.",
+    tags: ["Tableau", "Power BI", "Excel", "Machine Learning", "NLP"]
+  }
+];
+
+function renderToolsSection() {
+  const container = document.getElementById('tools-timeline');
+  if (!container) return;
+  container.innerHTML = toolsData.map(tool => `
+    <div class="tool-entry">
+      <span class="tool-dot"></span>
+      <div class="tool-content">
+        <div class="tool-title">${tool.title}</div>
+        <div class="tool-desc">${tool.desc}</div>
+        <div class="tool-tags">
+          ${tool.tags.map(tag => `<span class="tool-tag">${tag}</span>`).join('')}
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+renderToolsSection();
+
+// ---- Tools Section Animation ----
+function animateToolEntries() {
+  const entries = document.querySelectorAll('.tool-entry');
+  function reveal() {
+    const trigger = window.innerHeight * 0.92;
+    entries.forEach((el, i) => {
+      const top = el.getBoundingClientRect().top;
+      if (top < trigger) {
+        setTimeout(() => el.classList.add('visible'), i * 120);
+      }
+    });
+  }
+  window.addEventListener('scroll', reveal);
+  window.addEventListener('load', reveal);
+  reveal();
+}
+animateToolEntries();
