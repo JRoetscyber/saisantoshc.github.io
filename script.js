@@ -1,4 +1,3 @@
-
 // Smooth scroll for nav links
 document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', function(e) {
@@ -11,17 +10,33 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // Active nav link on scroll
-const sections = ['about', 'projects', 'contact'];
+const sections = ['about', 'work-experience', 'tools', 'certifications', 'projects', 'contact'];
 window.addEventListener('scroll', () => {
   let scrollPos = window.scrollY + 80;
   sections.forEach(id => {
     const sec = document.getElementById(id);
     if (sec && sec.offsetTop <= scrollPos && sec.offsetTop + sec.offsetHeight > scrollPos) {
       document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-      document.querySelector('.nav-links a[href="#'+id+'"]').classList.add('active');
+      const navLink = document.querySelector('.nav-links a[href="#'+id+'"]');
+      if (navLink) navLink.classList.add('active');
     }
   });
 });
+
+// Animate contact-info fade-in
+function fadeInContactInfo() {
+  const el = document.querySelector('.contact-info');
+  if (!el) return;
+  const trigger = window.innerHeight * 0.92;
+  const top = el.getBoundingClientRect().top;
+  if (top < trigger) {
+    el.style.animationPlayState = 'running';
+    window.removeEventListener('scroll', fadeInContactInfo);
+  }
+}
+
+window.addEventListener('scroll', fadeInContactInfo);
+window.addEventListener('load', fadeInContactInfo);
 
 // Fade/slide in on scroll
 function revealOnScroll(selector, visibleClass = 'visible') {
@@ -37,9 +52,13 @@ function revealOnScroll(selector, visibleClass = 'visible') {
   }
   window.addEventListener('scroll', reveal);
   window.addEventListener('load', reveal);
+  reveal();
 }
 revealOnScroll('.about-block');
 revealOnScroll('.project-card');
+revealOnScroll('.work-card');
+revealOnScroll('.tools-list');
+revealOnScroll('.certifications-list');
 
 // Contact form (no backend, just UX)
 document.querySelector('.contact-form').addEventListener('submit', function(e) {
@@ -63,3 +82,29 @@ toggle.onclick = () => {
   }
 };
 */
+
+// Responsive nav toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const navToggle = document.querySelector('.nav-toggle');
+  const navLinks = document.querySelector('.nav-links');
+  if (navToggle && navLinks) {
+    navToggle.addEventListener('click', function() {
+      navLinks.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
+    });
+    // Close menu on link click (mobile)
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+    // Close menu if window resized to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        navLinks.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+});

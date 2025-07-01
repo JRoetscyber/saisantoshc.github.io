@@ -9,74 +9,161 @@
 <body>
   <nav>
     <a href="#" class="nav-logo">Sai Santosh</a>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
     <div class="nav-links">
       <a href="#about">About</a>
+      <a href="#work-experience">Work Experience</a>
+      <a href="#tools">Tools</a>
+      <a href="#certifications">Certifications</a>
       <a href="#projects">Projects</a>
       <a href="#contact">Contact</a>
     </div>
   </nav>
+
   <section class="hero" id="hero">
     <h1>Hi, I'm Sai Santosh</h1>
-    <p>I'm a passionate web developer crafting modern, minimal, and interactive digital experiences. Let's build something amazing together.</p>
+    <p>I’m a passionate data analyst and full-stack developer transforming complex data into actionable insights and seamless digital experiences. Let’s build something impactful together.</p>
     <a href="#projects"><button class="cta">View Projects</button></a>
   </section>
+
   <section class="about" id="about">
     <div class="about-block fade-in">
-      <h3>Web Development</h3>
-      <p>Building responsive, performant, and accessible websites using the latest web technologies and best practices.</p>
+      <h3>Data Analytics & AI</h3>
+      <p>Leveraging business analytics, machine learning, and advanced data visualization to turn complex data into clear, actionable insights for smarter decision-making.</p>
     </div>
     <div class="about-block fade-in">
-      <h3>UI/UX Design</h3>
-      <p>Designing clean, intuitive interfaces with a focus on user experience, modern aesthetics, and seamless interactions.</p>
+      <h3>Full-Stack Development</h3>
+      <p>Building scalable web applications using Python, Django, React, and cloud technologies with clean, maintainable code and user-focused interfaces.</p>
     </div>
     <div class="about-block fade-in">
-      <h3>Consulting</h3>
-      <p>Helping startups and businesses define, design, and launch their digital products with clarity and confidence.</p>
+      <h3>Problem Solving</h3>
+      <p>Designing solutions for real-world challenges through innovative projects across domains like risk analysis, NLP, satellite imagery detection, and IoT-enabled applications.</p>
     </div>
   </section>
+
+  <section class="work-experience-section" id="work-experience">
+    <h2 class="section-title fade-in">Work Experience</h2>
+    <div class="work-experience-list">
+      <div class="work-card fade-in">
+        <h4>Data Analyst, Insurigo <span>(Sept 2024 - June 2025)</span></h4>
+        <ul>
+          <li>Tableau dashboards, SQL analytics, Excel automation for insurance metrics and reporting.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in">
+        <h4>Senior Software Engineer, Insurigo <span>(July 2021 - Aug 2023)</span></h4>
+        <ul>
+          <li>REST APIs (Python/Django), MySQL/PostgreSQL, CI/CD, React, MongoDB, Azure DevOps.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in">
+        <h4>Full Stack Developer, Apollo Telehealth <span>(Jan 2021 – Jun 2021)</span></h4>
+        <ul>
+          <li>React, TypeScript, Node.js, Express, Angular, MongoDB, large-scale data migration.</li>
+        </ul>
+      </div>
+      <div class="work-card fade-in">
+        <h4>Machine Learning Engineer, Egen AI <span>(Jan 2020 - Jan 2021)</span></h4>
+        <ul>
+          <li>Machine learning solutions (details on request).</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="tools-section" id="tools">
+    <h2 class="section-title fade-in">Tools & Technologies</h2>
+    <div class="tools-list fade-in">
+      <ul>
+        <li>Python, Django, Flask, Node.js, Express, React, Angular</li>
+        <li>SQL, MySQL, PostgreSQL, MongoDB</li>
+        <li>Tableau, Excel, Power BI</li>
+        <li>Azure, Azure DevOps, Git, Stripe API</li>
+        <li>OpenCV, Machine Learning, NLP</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="certifications-section" id="certifications">
+    <h2 class="section-title fade-in">Certifications</h2>
+    <div class="certifications-list fade-in">
+      <ul>
+        <li>Microsoft Azure Fundamentals</li>
+        <li>Graduate Certification – UTD Applied Machine Learning</li>
+      </ul>
+    </div>
+  </section>
+
   <section class="projects" id="projects">
     <div class="project-card fade-in">
-      <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=400&q=80" alt="Project 1"/>
-      <h4>Portfolio Website</h4>
-      <p>A sleek, animated portfolio site to showcase your work and skills. Built with HTML, CSS, and JavaScript.</p>
-      <a href="#">View Project</a>
+      <img src="images/52bd8796-72b8-44fa-8c93-fb5aae73276e.png" alt="Risk Factor Analysis"/>
+      <h4>Risk Factor Analysis</h4>
+      <p>Built a large-scale risk analysis system using Hadoop, Spark, PostgreSQL, and Tableau, enabling data-driven safety policy decisions with interactive dashboards.</p>
     </div>
     <div class="project-card fade-in">
-      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Project 2"/>
-      <h4>Landing Page</h4>
-      <p>Modern, conversion-focused landing page with smooth scroll and engaging transitions.</p>
-      <a href="#">View Project</a>
+      <img src="images\2.png" alt="Football Field Detection"/>
+      <h4>Football Field Detection</h4>
+      <p>Flask-based application leveraging OpenCV and ML for satellite image analysis, detecting football fields accurately from aerial views.</p>
+      <a href="https://github.com/saisantoshchirag/Football-Field-Detection-From-Satellite-image" target="_blank">View Project</a>
     </div>
     <div class="project-card fade-in">
-      <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Project 3"/>
-      <h4>Dashboard UI</h4>
-      <p>Interactive dashboard UI for data visualization and management, featuring minimal design and responsive layout.</p>
-      <a href="#">View Project</a>
+      <img src="images/translate.jpg" alt="SpeakTrue"/>
+      <h4>SpeakTrue</h4>
+      <p>Django application leveraging speech recognition, multilingual translation, and LSTM-based text generation to help physically handicapped users convert speech to text.</p>
+      <a href="https://github.com/Karthik1000/SpeakTrue" target="_blank">View Project</a>
+    </div>
+    <div class="project-card fade-in">
+      <img src="images/trip.jpg" alt="Trip Planner"/>
+      <h4>Trip Planner</h4>
+      <p>Full-stack trip planning platform using Django, MySQL, and Stripe, integrating live transport data for seamless user travel planning and secure transactions.</p>
+      <a href="https://github.com/saisantoshchirag/Trip_planner" target="_blank">View Project</a>
+    </div>
+    <div class="project-card fade-in">
+      <img src="images/R.jpg" alt="FarmUP Project" />
+      <h4>FarmUP</h4>
+      <p>Smart farming and leasing platform with multi-user roles, e-commerce integration, and secure payments, helping users search, lease land, and trade agricultural products.</p>
+      <a href="https://github.com/bradison18/Farmup" target="_blank">View Project</a>
     </div>
   </section>
+
   <section class="contact-section" id="contact">
     <h2>Contact Me</h2>
-    <form class="contact-form" autocomplete="off">
-      <input type="text" name="name" placeholder="Your Name" required/>
-      <input type="email" name="email" placeholder="Your Email" required/>
-      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="contact-info">
+      <p>
+        <strong>Email:</strong>
+        <a href="mailto:santosh.265559@gmail.com">santosh.265559@gmail.com</a>
+      </p>
+      <p>
+        <strong>Socials:</strong>
+        <a href="https://github.com/saisantoshchirag" target="_blank" aria-label="GitHub">GitHub</a> |
+        <a href="https://twitter.com/" target="_blank" aria-label="Twitter">Twitter</a>
+      </p>
+    </div>
   </section>
+
   <footer>
     <div class="footer-social">
-      <a href="https://github.com/saisantoshc" target="_blank" aria-label="GitHub"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z" fill="currentColor"/></svg></a>
-      <a href="https://twitter.com/" target="_blank" aria-label="Twitter"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none"><path d="M22.46 5.924c-.793.352-1.645.59-2.54.697a4.48 4.48 0 0 0 1.965-2.475 8.94 8.94 0 0 1-2.828 1.082A4.48 4.48 0 0 0 16.11 4c-2.482 0-4.495 2.013-4.495 4.495 0 .352.04.695.116 1.022C7.728 9.37 4.1 7.555 1.67 4.905a4.48 4.48 0 0 0-.608 2.262c0 1.56.795 2.936 2.004 3.744a4.48 4.48 0 0 1-2.037-.563v.057c0 2.18 1.55 4.002 3.604 4.417a4.49 4.49 0 0 1-2.03.077c.573 1.788 2.24 3.09 4.213 3.125A8.99 8.99 0 0 1 2 19.54a12.7 12.7 0 0 0 6.88 2.017c8.26 0 12.78-6.84 12.78-12.78 0-.195-.004-.39-.013-.583A9.14 9.14 0 0 0 24 4.59a8.98 8.98 0 0 1-2.54.697z" fill="currentColor"/></svg></a>
-      <a href="mailto:saisantoshc@gmail.com" aria-label="Email"><svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20v-9.99l7.293 6.293a1 1 0 0 0 1.414 0L20 10.01V20H4z" fill="currentColor"/></svg></a>
+      <a href="https://github.com/saisantoshchirag" target="_blank" aria-label="GitHub">
+        <!-- GitHub SVG Icon -->
+        <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.484 2 12.021c0 4.428 2.865 8.184 6.839 9.504.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0 1 12 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .267.18.579.688.481C19.138 20.2 22 16.447 22 12.021 22 6.484 17.523 2 12 2Z" fill="currentColor"/></svg>
+      </a>
+      <a href="mailto:santosh.265559@gmail.com" aria-label="Email">
+        <!-- Email SVG Icon -->
+        <svg width="1.3em" height="1.3em" viewBox="0 0 24 24" fill="none"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2v.01L12 13 4 6.01V6h16zM4 20v-9.99l7.293 6.293a1 1 0 0 0 1.414 0L20 10.01V20H4z" fill="currentColor"/></svg>
+      </a>
     </div>
-      <div>
+    <div>
       &copy; <span id="year"></span> Sai Santosh. All rights reserved.
     </div>
-    <script src="script.js"></script>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
+      document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
