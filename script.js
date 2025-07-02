@@ -336,23 +336,31 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Experience Section: Add glow effect that follows mouse cursor
 document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.timeline-entry').forEach(entry => {
-    // Add the glow div if not present
-    if (!entry.querySelector('.glow')) {
-      const glow = document.createElement('div');
-      glow.className = 'glow';
-      entry.appendChild(glow);
-    }
-    entry.addEventListener('mousemove', function(e) {
-      const rect = entry.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      entry.querySelector('.glow').style.setProperty('--glow-x', `${x}%`);
-      entry.querySelector('.glow').style.setProperty('--glow-y', `${y}%`);
+  // Helper to add glow effect to a selector
+  function addGlowEffect(selector) {
+    document.querySelectorAll(selector).forEach(entry => {
+      // Add the glow div if not present
+      if (!entry.querySelector('.glow')) {
+        const glow = document.createElement('div');
+        glow.className = 'glow';
+        entry.appendChild(glow);
+      }
+      entry.addEventListener('mousemove', function(e) {
+        const rect = entry.getBoundingClientRect();
+        const x = ((e.clientX - rect.left) / rect.width) * 100;
+        const y = ((e.clientY - rect.top) / rect.height) * 100;
+        entry.querySelector('.glow').style.setProperty('--glow-x', `${x}%`);
+        entry.querySelector('.glow').style.setProperty('--glow-y', `${y}%`);
+      });
+      entry.addEventListener('mouseleave', function() {
+        entry.querySelector('.glow').style.setProperty('--glow-x', `50%`);
+        entry.querySelector('.glow').style.setProperty('--glow-y', `50%`);
+      });
     });
-    entry.addEventListener('mouseleave', function() {
-      entry.querySelector('.glow').style.setProperty('--glow-x', `50%`);
-      entry.querySelector('.glow').style.setProperty('--glow-y', `50%`);
-    });
-  });
+  }
+
+  addGlowEffect('.timeline-entry');
+  addGlowEffect('.project-card');
+  addGlowEffect('.tool-entry');
+  addGlowEffect('.certification-entry');
 });
